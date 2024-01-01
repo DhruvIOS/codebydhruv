@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap");
+
+/* ExtraLight: 200
+Light: 300
+Regular: 400
+SemiBold: 600
+Bold: 700 */
+
+:root {
+  --grey: rgb(220, 213, 213);
+  --orange: rgb(253, 152, 20);
+  --white: rbg(255, 255, 255);
+  --mat-black: 	rgb(19, 19, 20);
+  -md-blue: rgb(25, 25, 112);
+  --cadmiun-red: rgb(210, 43, 43);
+}
+
+
+
+.sticky {
+  background-color: transparent;
+  color: black;
+}
+
+body{
+  height: 200vh;
+  background-color: var(--mat-black);
+
+}
+
+
+
+
+
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  filter: brightness(60%);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: 250ms;
+  z-index: 2;
+}
+
+.nav-links {
+  position: absolute;
+  left: 0;
+  top: 5vh;
+  width: 100%;
+  height: 70vh;
+  background-color: black;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: menu_animations 500ms ease-in;
+}
+
+.show-navlinks {
+  display: flex;
+}
+
+@keyframes menu_animations {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--grey);
+  transition: 250ms;
+  font-family: "Titillium Web", sans-serif;
+}
+
+header ul li {
+  list-style: none;
+  margin: 20px 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: var(--grey);
+  transition: 250ms;
+  font-family: "Titillium Web";
+  font-weight: 600;
+}
+
+header ul li a:hover {
+  color: var(--orange);
+}
+
+
+.vert-center-text {
+  position: absolute; 
+  top: 40%; 
+  left: 0;
+  text-align: center; 
+  width: 100%; 
+}
+
+.mainContent{
+  color: white;
+  position: absolute;
+   width: 100%;
+  height: 20px; 
+  top: 50%;
+  margin-top: -10px;
+  text-align: center;
+
+}
+
+.learnMore{
+
+  color: white;
+  position: absolute;
+   width: 100%;
+  height: 20px; 
+  top: 92%;
+  margin-top: -10px;
+  text-align: center;
+
+}
+
+section{
+  position: absolute;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  display:inline-block;
+  background: var(--mat-black)
+}
+
+
+
+
+.AboutMe h1{
+  color: white;
+  text-align: center;
+  align-items: center;
+
+  position: absolute;
+
+  left: 45%;
+  top: 10%;
+
+  font-size: 2em;
+  font-weight: 600;
+  font-family: "Titillium Web";
+  font-size: 3em;
+
+
+
+}
+
+.AboutMe h1 > span{
+  color: var(--orange);
+  /* font-size: 2em; */
+
+}
+
+.AboutMe p{
+
+  font-weight: 400;
+  font-family: "Titillium Web";
+  color:blue;
+
+
+  position: absolute;
+
+
+  top: 30%;
+
+
+  left: 30%;
+
+  color: whitesmoke;
+
+  font-size: 1.1em;
+
+  
+
+}
+
+
+
+.learnMore p{
+  font-weight: 300;
+  font-family: "Titillium Web";
+  font-size: 1rem;
+
+}
+
+.Test{
+
+  color: black;
+  position: absolute;
+   width: 100%;
+  height: 20px; 
+  top: 102%;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.Test h1{
+  font-weight: 300;
+  font-family: "Titillium Web";
+  font-size: 1rem;
+
+}
+
+.intro{
+  font-weight: 700;
+  font-family: "Titillium Web";
+  font-size: 2.5rem
+}
+
+.intro span{
+  color:var(--orange)
+}
+
+.learnMore i{
+  font-size: 1rem;
+}
+
+
+
+.vert-center-text h1 { 
+   color: white;
+}
+
+.vert-center-container {
+ position:relative;
+}
+
+.hamburger-on {
+  background: url(../images/bar1.svg);
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+
+  filter: brightness(0) invert(1);
+}
+
+.hamburger-off {
+  padding: 9px;
+  background: url(../images/xmark-solid.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+  filter: brightness(0) invert(1);
+}
+
+@media screen and (min-width: 700px) {
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: unset;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+
+  header ul {
+    display: flex;
+  }
+
+  header ul li {
+    margin: 0;
+  }
+
+  header ul li a {
+    padding: 0;
+    margin: 5px 37px;
+    font-size: 0.9em;
+  }
+
+  .hamburger-on {
+    display: none;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+}

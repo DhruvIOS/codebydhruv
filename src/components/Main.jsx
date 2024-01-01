@@ -105,9 +105,13 @@ const Main = () => {
 
             <section id="aboutMe">
                     <div className="AboutMe">
-                        <h1>About <span>Me</span></h1>
-                        <p>I'M A FULL TIME COLLEGE STUDENT LEARNING COMPUTER SCIENCE FOR SOFTWARE ENGEERING. <br />SELF TEACHING MY SELF WEB DEVELOPMENT SO I CAN LAND A JOB AS A BACKEND WEB DEVELOPER. <br /> I ALSO MAKE SIDE PROJECTS THAT SUIT ME AND WHICH IS MOST COMFORTABLE FOR ME. <br/ > <a>YOU CAN FIND MY PROJECTS HERE</a></p>
+                        {/* <h1>About <span>Me</span></h1>
+                        <p>I'M A FULL TIME COLLEGE STUDENT LEARNING COMPUTER SCIENCE FOR SOFTWARE ENGEERING. <br />SELF TEACHING MY SELF WEB DEVELOPMENT SO I CAN LAND A JOB AS A BACKEND WEB DEVELOPER. <br /> I ALSO MAKE SIDE PROJECTS THAT SUIT ME AND WHICH IS MOST COMFORTABLE FOR ME. <br/ > <a>YOU CAN FIND MY PROJECTS HERE</a></p> */}
+                        <h1>More coming soon</h1>
+                    
                     </div>
+
+
                 </section>
 
         </div>

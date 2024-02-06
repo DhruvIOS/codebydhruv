@@ -172,7 +172,7 @@ section{
   align-items: center;
 
   position: absolute;
-  flex: 50%;
+
   left: 44%;
   top: 10%;
 
@@ -333,10 +333,25 @@ section{
     font-size: 22px;
   }
 
-  .AboutMe p{
-    margin-right: 0px;
+}
+@media screen and (max-width: 1000px) {
+  .AboutMe h1 {
+    left: 32%;
   }
 
+  .AboutMe p {
+    left: 15%;
+    right: 10%;
+  }
+}
 
+@media screen and (max-width: 652px) {
+  .AboutMe h1 {
+    left: 32%;
+  }
 
+  .AboutMe p {
+    left: 15%;
+    right: 10%;
+  }
 }

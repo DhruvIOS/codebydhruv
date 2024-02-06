@@ -152,6 +152,7 @@ header ul li a:hover {
 
 }
 
+
 section{
   position: absolute;
   top: 100%;
@@ -164,20 +165,23 @@ section{
 
 
 
+
 .AboutMe h1{
   color: white;
   text-align: center;
   align-items: center;
 
   position: absolute;
-
-  left: 39%;
+  flex: 50%;
+  left: 44%;
   top: 10%;
 
   font-size: 2em;
   font-weight: 600;
   font-family: "Titillium Web";
   font-size: 3em;
+
+  border-bottom: 2px orange solid;
 
 
 
@@ -193,7 +197,7 @@ section{
 
   font-weight: 400;
   font-family: "Titillium Web";
-  color:blue;
+
 
 
   position: absolute;
@@ -204,9 +208,17 @@ section{
 
   left: 30%;
 
+  /* margin-right: 220px; */
+
+  right: 20%;
+
+
+
+
+
   color: whitesmoke;
 
-  font-size: 1.1em;
+  font-size: 1.2rem;
 
   
 
@@ -250,7 +262,7 @@ section{
 }
 
 .learnMore i{
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 
@@ -320,4 +332,11 @@ section{
   .logo {
     font-size: 22px;
   }
+
+  .AboutMe p{
+    margin-right: 0px;
+  }
+
+
+
 }

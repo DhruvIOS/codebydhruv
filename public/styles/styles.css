@@ -23,7 +23,7 @@ Bold: 700 */
 }
 
 body{
-  height: 200vh;
+  height: 300vh;
   background-color: var(--mat-black);
 
 }
@@ -153,7 +153,21 @@ header ul li a:hover {
 }
 
 
-section{
+
+
+#aboutMe{
+  position: absolute;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  display:inline-block;
+  background: var(--mat-black);
+
+
+}
+
+
+#skills{
   position: absolute;
   top: 100%;
   height: 100%;
@@ -166,6 +180,9 @@ section{
 
 
 
+
+
+
 .AboutMe h1{
   color: white;
   text-align: center;
@@ -173,7 +190,125 @@ section{
 
   position: absolute;
 
-  left: 44%;
+  left: 25%;
+  top: 10%;
+
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: "Titillium Web";
+  font-size: 3em;
+
+  border-bottom: 2px orange solid;
+
+
+
+
+
+
+}
+
+.SkillsContainer{
+  /* background-color: rgba(8, 7, 6, 0.786); */
+
+  background-color: rgb(2, 2, 12);
+  position: absolute;
+  width: 65%; /* use percentage-based width instead */
+  height: auto;
+  left: 20%;
+  top: 25%;
+  padding-left: 25px;
+
+  display: grid;
+  place-items: center;
+
+  grid-template: row;
+
+
+  display: inline-block;
+
+
+  padding-bottom: 15px;
+
+  padding: 70px 0;
+
+
+  padding-left: 30px;
+
+
+  filter: drop-shadow(rgba(94, 71, 54, 0.637) .9rem .9rem 8px);
+
+
+  
+}
+
+
+
+.SkillsContainer div{
+  color: white;
+
+  /* border: 1px solid #ccc; */
+
+  background-color: #ccc;
+
+  color: black;
+
+  margin-left: 5px;
+
+
+
+  margin-top: 15px;
+
+  padding-left: 5px;
+
+  padding-top: 15px;
+
+
+
+
+
+  width: 20%;
+
+  height: 45% !important;
+
+  text-align: center;
+
+  border-radius: 5px;
+
+  font-size: 1.3em;
+
+
+  display: inline-block;
+
+  padding-bottom: 20px;
+
+  
+
+
+
+
+
+
+}
+
+.MySkills{
+  width: 100%; /* use percentage-based width instead */
+  max-width: 1475px; /* if needed, set a maximum width */
+  margin: 0 auto;
+  padding: 25px;
+  overflow: auto;
+
+
+
+}
+
+.MySkills h1{
+  color: white;
+  text-align: center;
+  align-items: center;
+
+  position: absolute;
+
+  left: 50%;
   top: 10%;
 
   font-size: 2em;
@@ -187,13 +322,121 @@ section{
 
 }
 
+/* .imgContainer{
+
+  position: relative;
+
+  left: 66%;
+
+  top: 100px;
+
+
+
+
+}
+
+img{
+  position: relative;
+
+
+} */
+
+
+.imgContainer {
+  position: absolute;
+  left: 65%;
+  top: 10rem;
+  max-width: 40%;
+  height: auto;
+
+  width: 600px;
+
+  height: 400px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.contentWrapper{
+  display: flex;
+
+  flex-direction: row;
+}
+
+
+.skillsRight{
+  color: white;
+  text-align: center;
+  align-items: center;
+
+  position: absolute;
+
+  left: 50%;
+  top: 10%;
+
+  font-size: 2em;
+  font-weight: 600;
+  font-family: "Titillium Web";
+  font-size: 3em;
+
+  border-bottom: 2px orange solid;
+
+}
+
 .AboutMe h1 > span{
   color: var(--orange);
   /* font-size: 2em; */
 
 }
 
+
+.MySkills h1 > span{
+  color: var(--orange);
+  /* font-size: 2em; */
+
+}
+
 .AboutMe p{
+
+  font-weight: 400;
+  font-family: "Titillium Web";
+
+
+
+  position: absolute;
+
+
+  top: 30%;
+
+
+  left: 5%;
+
+  margin-right: 220px;
+
+  right: 20%;
+
+
+
+
+
+  color: whitesmoke;
+
+  font-size: 1.2rem;
+
+  /* padding-right: 290px; */
+
+  margin-right: 500px;
+
+
+
+
+  
+
+}
+
+.MySkills p{
 
   font-weight: 400;
   font-family: "Titillium Web";
@@ -288,6 +531,7 @@ section{
   filter: brightness(0) invert(1);
 }
 
+
 .hamburger-off {
   padding: 9px;
   background: url(../images/xmark-solid.svg);
@@ -333,19 +577,92 @@ section{
     font-size: 22px;
   }
 
+ 
+ 
+
 }
 @media screen and (max-width: 1000px) {
   .AboutMe h1 {
+    left: 25%;
+  }
+
+  .AboutMe p {
+    left: 15%;
+    right: 10%;
+
+    margin-right: 0px;
+  }
+
+
+  /* .imgContainer {
+
+    left: 20%;
+
+    top: 50rem;
+
+  } */
+
+  .imgContainer {
+    position: absolute;
+    left: 15%;
+    top: 60rem;
+    max-width: 70%;
+    height: auto;
+  }
+
+  .imgContainer img {
+    width: 100%;
+    height: auto;
+  }
+
+
+}
+
+
+@media screen and (max-width: 1000px ) and   (min-width: 1150px ){
+
+  .AboutMe p {
+    left: 5%;
+    right: 10%;
+
+    margin-right: 400px;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 656px) {
+  .AboutMe h1 {
     left: 32%;
   }
 
   .AboutMe p {
     left: 15%;
     right: 10%;
-  }
-}
 
-@media screen and (max-width: 652px) {
+    margin-right: 0px;
+  }
+
+  /* .imgContainer{
+
+    left: 6%;
+
+    width: 500px;
+    height: 300px;
+
+    top: 60rem;
+  } */
+
+
+
+  
+
+
+}
+/* 
+@media screen and (max-width: 656px) {
   .AboutMe h1 {
     left: 32%;
   }
@@ -354,4 +671,24 @@ section{
     left: 15%;
     right: 10%;
   }
+
+  .intro{
+    font-size: 2rem;
+  }
+
+
+  .imgContainer{
+
+    left: 6%;
+
+    width: 500px;
+    height: 300px;
+
+    top: 60rem;
+  }
+
+  
+
+
 }
+ */

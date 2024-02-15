@@ -1,5 +1,7 @@
 import "./App.css";
 import Main from './components/Main.jsx'
+import About from './components/About.jsx'
+
 
 
 function App() {
@@ -8,6 +10,13 @@ function App() {
     <div>
       
       <Main />
+
+
+
+
+
+
+
 
 
     <h4>Test</h4>

@@ -13,6 +13,7 @@ import videoBg from '../assets/videoBg.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+import About from './About'
 
 
 
@@ -50,7 +51,7 @@ const Main = () => {
 
             header.current.classList.toggle("sticky", window.scrollY > 50)
 
-            console.log('scorlled')
+            // console.log('scorlled')
         });
     }, []);
 
@@ -102,8 +103,7 @@ const Main = () => {
                 </div>
             </div>
 
-
-            <section id="aboutMe">
+            {/* <section id="aboutMe">
                 <div className="AboutMe">
                     <h1>ABOUT <span>ME</span></h1>
                     <hr></hr>
@@ -119,17 +119,31 @@ const Main = () => {
                         <br />
                         <br />
 
-                        Connect with me on <a href='https://www.linkedin.com/in/dhruvshah23/'>LinkedIn</a> to explore potential job opportunities. I look forward to connecting with you and discussing how I can contribute to your team!</p>
-
+                        Connect with me on <a href='https://www.linkedin.com/in/dhruvshah23/' target='__blank'>LinkedIn</a> to explore potential job opportunities. I look forward to connecting with you and discussing how I can contribute to your team!</p>
 
                 </div>
 
-                
 
+            <section id="skills">
+                <div className="MySkills">
+                    <h1>Skills <span>ME</span></h1>
+                    <hr></hr>
+                    <p>My skills</p>
 
-
+                </div>
 
             </section>
+
+            </section> */}
+
+            <About />
+
+
+
+
+           
+
+       
 
             
 

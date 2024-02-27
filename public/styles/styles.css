@@ -190,7 +190,7 @@ header ul li a:hover {
 
   position: absolute;
 
-  left: 25%;
+  left: 15%;
   top: 10%;
 
   font-size: 1.5em;
@@ -345,19 +345,43 @@ img{
 .imgContainer {
   position: absolute;
   left: 65%;
-  top: 10rem;
+  top: 12rem;
   max-width: 40%;
   height: auto;
 
-  width: 600px;
+  width: 400px;
 
   height: 400px;
+  transition: 1s ease-in-out;
+
+  filter: drop-shadow(3px 5px 10px #2c2cca);
+
+
 }
 
 .imgContainer img {
   width: 100%;
   height: auto;
+
+  border-radius: 30px;
+
+
+
+
 }
+
+.imgContainer:hover{
+
+
+
+  transform: scale(1.1);
+
+
+  filter: drop-shadow(20px 10px 4px #3f3fddeb);
+
+}
+
+
 
 .contentWrapper{
   display: flex;

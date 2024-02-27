@@ -84,7 +84,7 @@ const Main = () => {
                         <li><a href="#">HOME</a></li>
                         <li><a href="#aboutMe">ABOUT ME</a></li>
                         <li><a href="#">PROJECTS</a></li>
-                        <li><a href="#">GITHUB</a></li>
+                        <li><a href="https://github.com/dhruvios" target='__blank'>GITHUB</a></li>
 
                     </ul>
                 </header>

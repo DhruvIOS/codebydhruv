@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { motion, useInView, useAnimate  } from "framer-motion"
 
 
 
@@ -23,6 +24,64 @@ import myPicture2 from '../assets/images/myPicture2.jpg'
 const About = () => {
 
 
+    const [scope, animate] = useAnimate()
+
+    const [paraScope, animatePara] = useAnimate()
+
+    const [picScope, picAnimate] = useAnimate()
+
+
+
+    const aboutMe_inView = useInView(scope)
+
+    const para_inView = useInView(paraScope)
+
+    const pic_inView = useInView(picScope)
+
+
+    useEffect(() => {
+
+        if(aboutMe_inView) {
+            animate(scope.current, {x: 0})
+        }
+
+  
+
+
+
+
+    },[aboutMe_inView])
+
+
+    useEffect(() => {
+
+
+
+        if(para_inView) {
+
+            animatePara(paraScope.current, {opacity: 1})
+
+        }
+
+
+
+
+    },[para_inView])
+
+    useEffect(() => {
+
+
+
+        if(pic_inView) {
+
+            picAnimate(picScope.current, {x: 0})
+
+        }
+
+
+
+
+    },[pic_inView])
 
 
 
@@ -48,15 +107,38 @@ const About = () => {
             <div className="contentWrapper">
 
             <section id="aboutMe">
-                <div className="AboutMe">
+                <div      className="AboutMe">
 
                     <div className="imgContainer">
 
-                        <img src={myPicture2}></img> 
+                        <motion.img 
+                                    initial={{ x: 300}}
+                                    transition={{  ease: "circIn", delay: 0.8, duratin:0.9 }}
+                
+                                    ref={picScope}
+                        
+                        src={myPicture2}></motion.img> 
                     </div>
-                    <h1>Get to Know me!</h1>
+                    <motion.h1
+
+                    initial={{ x: -300}}
+                    transition={{  ease: "circIn", delay: 0.8, duratin:0.9 }}
+
+                    ref={scope}
+                       
+ 
+                           
+                    >Get to Know me!</motion.h1>
+
                     <hr></hr>
-                    <p>Welcome! I'm Dhruv Shah, a dedicated student of computer science with a strong passion for web development. Currently advancing my studies in computer science, I'm also actively self-teaching web development to complement  my academic knowledge.
+                    <motion.p
+                    
+                    initial={{ opacity: 0}}
+                    transition={{  ease:"circIn", delay: 3, duratin: 4 }}
+
+                    ref={paraScope}
+
+                    >Welcome! I'm Dhruv Shah, a dedicated student of computer science with a strong passion for web development. Currently advancing my studies in computer science, I'm also actively self-teaching web development to complement  my academic knowledge.
                         <br />
                         <br />
 
@@ -68,7 +150,7 @@ const About = () => {
                         <br />
                         <br />
 
-                        Connect with me on <a href='https://www.linkedin.com/in/dhruvshah23/' target='__blank'>LinkedIn</a> to explore potential job opportunities. I look forward to connecting with you and discussing how I can contribute to your team!</p>
+                        Connect with me on <a href='https://www.linkedin.com/in/dhruvshah23/' target='__blank'>LinkedIn</a> to explore potential job opportunities. I look forward to connecting with you and discussing how I can contribute to your team!</motion.p>
 
                 </div>
 
@@ -81,7 +163,9 @@ const About = () => {
 
 
 
+            <Skills/>
             </section> 
+
 
             </div>
 
@@ -155,6 +239,9 @@ const About = () => {
 
 
         </div>
+
+
+
 
 
     )

@@ -138,6 +138,8 @@ header ul li a:hover {
   margin-top: -10px;
   text-align: center;
 
+
+
 }
 
 .learnMore{
@@ -167,14 +169,6 @@ header ul li a:hover {
 }
 
 
-#skills{
-  position: absolute;
-  top: 100%;
-  height: 100%;
-  width: 100%;
-  display:inline-block;
-  background: var(--mat-black)
-}
 
 
 
@@ -207,79 +201,117 @@ header ul li a:hover {
 
 }
 
+
+
+#skills{
+  position: relative; /* changed from absolute to relative */
+  height: 100vh; /* set a fixed height for the section */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  top: 800px;
+}
+
+.SkillsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SkillsContainer h2:hover{
+  cursor: pointer;
+  background-color: rgb(241, 100, 6);
+  transform: scale(1.2);
+}
+
+.SkillsContainer h2{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+    position: relative;
+    
+  
+
+    
+
+
+    font-size: 1.3em;
+
+    top:6%;
+
+   
+
+
+    
+  
+    border: 2px double rgb(243, 148, 6);
+
+    height: auto;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+
+    transition: transform 0.5s ease-in-out
+
+;
+  }
+
 .SkillsContainer{
   /* background-color: rgba(8, 7, 6, 0.786); */
 
-  background-color: rgb(2, 2, 12);
-  position: absolute;
-  width: 65%; /* use percentage-based width instead */
-  height: auto;
-  left: 20%;
-  top: 25%;
-  padding-left: 25px;
 
   display: grid;
-  place-items: center;
+  grid-template-columns: repeat(5, 3fr); /* set a grid with 3 columns */
+  gap: 20px;
+  padding: 20px;
 
-  grid-template: row;
-
-
-  display: inline-block;
-
-
-  padding-bottom: 15px;
-
-  padding: 70px 0;
-
-
-  padding-left: 30px;
-
-
-  filter: drop-shadow(rgba(94, 71, 54, 0.637) .9rem .9rem 8px);
+ 
 
 
   
 }
 
 
+
+.SkillsContainer div:hover{
+
+  cursor: pointer;
+  transform: scale(1.1);
+
+  
+}
 
 .SkillsContainer div{
-  color: white;
-
-  /* border: 1px solid #ccc; */
-
-  background-color: #ccc;
-
+  background-color: var(--orange);
   color: black;
-
-  margin-left: 5px;
-
-
-
-  margin-top: 15px;
-
-  padding-left: 5px;
-
-  padding-top: 15px;
-
-
-
-
-
-  width: 20%;
-
-  height: 45% !important;
-
-  text-align: center;
-
+  padding: 15px;
   border-radius: 5px;
-
   font-size: 1.3em;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 
 
-  display: inline-block;
+  
 
-  padding-bottom: 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
   
 
@@ -290,33 +322,28 @@ header ul li a:hover {
 
 }
 
-.MySkills{
-  width: 100%; /* use percentage-based width instead */
-  max-width: 1475px; /* if needed, set a maximum width */
+
+.MySkills {
+  max-width: 800px; /* set a max width for the container */
   margin: 0 auto;
-  padding: 25px;
-  overflow: auto;
-
-
-
+  padding: 20px;
 }
 
-.MySkills h1{
-  color: white;
-  text-align: center;
-  align-items: center;
 
-  position: absolute;
+.MySkills h1{
 
   left: 50%;
   top: 10%;
 
+  color: white;
+  text-align: center;
   font-size: 2em;
   font-weight: 600;
   font-family: "Titillium Web";
-  font-size: 3em;
-
   border-bottom: 2px orange solid;
+  margin-bottom: 20px;
+
+
 
 
 
@@ -354,7 +381,7 @@ img{
   height: 400px;
   transition: 1s ease-in-out;
 
-  filter: drop-shadow(3px 5px 10px #2c2cca);
+  filter: drop-shadow(3px 5px 10px rgb(122, 123, 122));
 
 
 }
@@ -370,6 +397,48 @@ img{
 
 }
 
+.container10 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.image10 {
+  width: 50%;
+  height: auto;
+}
+
+.text10 {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title10 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.description10 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.button10 {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.button10:hover {
+  background-color: #45a049;
+}
+
+
 .imgContainer:hover{
 
 
@@ -377,9 +446,56 @@ img{
   transform: scale(1.1);
 
 
-  filter: drop-shadow(20px 10px 4px #3f3fddeb);
+  filter: drop-shadow(20px 10px 4px #6a6a6beb);
 
 }
+
+.resume{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 20vh;
+
+  margin: 0;
+}
+
+.button-63 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#ffb640, #f38c42 50%,#ebb000);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-63:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+}
+
+.button-63:active,
+.button-63:hover {
+  outline: 0;
+}
+
+
 
 
 
@@ -601,9 +717,46 @@ img{
     font-size: 22px;
   }
 
+
+
  
  
 
+
+
+
+}
+
+@media (max-width: 480px) {
+  .SkillsContainer {
+     grid-template-columns: repeat(1, 1fr);
+   }
+  .SkillsContainer div {
+     font-size: 1.1em;
+   }
+
+   #skills{
+    position: relative;
+    top: 1000px
+  }
+ }
+
+@media (max-width: 768px) {
+  .SkillsContainer {
+     grid-template-columns: repeat(2, 1fr);
+   }
+
+   #skills{
+    position: relative;
+    top: 1200px
+  }
+ }
+
+ @media (min-width: 768px) {
+  .button-63 {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }
 @media screen and (max-width: 1000px) {
   .AboutMe h1 {
@@ -615,6 +768,10 @@ img{
     right: 10%;
 
     margin-right: 0px;
+  }
+  #skills{
+    position: relative;
+    top: 1500px
   }
 
 
@@ -650,6 +807,11 @@ img{
     right: 10%;
 
     margin-right: 400px;
+  }
+
+  #skills{
+    position: relative;
+    top: 1600px
   }
 }
 

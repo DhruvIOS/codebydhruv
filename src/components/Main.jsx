@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
-
-
-
+import { motion } from "framer-motion"
+import pdf from '../assets/pdf/MainResume.pdf';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -9,11 +8,14 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import videoBg from '../assets/videoBg.mp4'
 
 
+import myPicture from '../assets/images/myPicture.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 import About from './About'
+
+import Skills from './Skills'
 
 
 
@@ -28,6 +30,10 @@ const Main = () => {
 
     let hamburgerOpen = false;
 
+
+        const openResume = () => {
+            window.open(pdf, '_blank')
+        }
 
 
 
@@ -71,7 +77,11 @@ const Main = () => {
 
 
         <div classNameName='main'>
-            <video src={videoBg} autoPlay loop muted />
+            <video src={videoBg}  autoPlay={true} 
+    loop={true}
+    controls={false} 
+    playsInline
+    muted  />
 
             <div className="">
                 <header ref={header}>
@@ -89,11 +99,33 @@ const Main = () => {
                     </ul>
                 </header>
 
-                <div className="mainContent">
-                    <h1 className='intro'>Hello, I'm <span>Dhruv Shah</span>, a student <br></br> studying computer science and web development.
-
+                <motion.div initial={{x: '-100vw'}} animate={{x: 0}}  transition={{  ease: "circIn" }}className="mainContent">
+                    <h1 className='intro'>Hello, I'm <motion.span  initial={{opacity: 0, y: -250}} animate={{opacity: 1, y:0}}  transition={{  ease: "anticipate", delay: 1 }}>Dhruv Shah</motion.span>, a student <br></br> studying computer science and web development.
+                    
+                   
+                    
                     </h1>
-                </div>
+
+                    <div className='resume'>
+
+
+                        <motion.button
+                        initial={{opacity: 0}} animate={{opacity: 1}}  transition={{  ease: 'linear' ,delay: 2 }}
+                        
+                        class="button-63" role="button" onClick={openResume}>Resume</motion.button>
+
+                    </div>
+
+
+                    
+
+
+
+
+
+
+                    
+                </motion.div>
 
                 <div className="learnMore">
                     <p >Learn more what i do </p>
@@ -103,40 +135,14 @@ const Main = () => {
                 </div>
             </div>
 
-            {/* <section id="aboutMe">
-                <div className="AboutMe">
-                    <h1>ABOUT <span>ME</span></h1>
-                    <hr></hr>
-                    <p>Welcome! I'm Dhruv Shah, a dedicated student of computer science with a strong passion for web development. Currently advancing my studies in computer science, I'm also actively self-teaching web development to complement  my academic knowledge.
-                        <br />
-                        <br />
-
-                        I am on the lookout for exciting job opportunities where I can apply my skills and contribute meaningfully to innovative projects. With a solid foundation in computer science and a growing expertise in web development, I am eager to embark on a professional journey where I can continue to learn, grow, and make a positive impact.
-                        <br />
-                        <br />
-
-                        If you're interested in discussing potential job opportunities or have a role that aligns with my skills and aspirations, I invite you to connect with me on LinkedIn. Let's explore how I can bring value to your team and contribute to your organization's success.
-                        <br />
-                        <br />
-
-                        Connect with me on <a href='https://www.linkedin.com/in/dhruvshah23/' target='__blank'>LinkedIn</a> to explore potential job opportunities. I look forward to connecting with you and discussing how I can contribute to your team!</p>
-
-                </div>
-
-
-            <section id="skills">
-                <div className="MySkills">
-                    <h1>Skills <span>ME</span></h1>
-                    <hr></hr>
-                    <p>My skills</p>
-
-                </div>
-
-            </section>
-
-            </section> */}
+           
 
             <About />
+
+
+
+
+
 
 
 

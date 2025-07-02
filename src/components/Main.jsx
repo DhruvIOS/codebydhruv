@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from "framer-motion"
-import pdf from '../assets/pdf/MainResume.pdf';
+import pdf from '../assets/pdf/DhruvShah_Resume.pdf';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 

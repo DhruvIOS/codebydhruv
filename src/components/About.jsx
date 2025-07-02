@@ -138,11 +138,11 @@ const About = () => {
 
                     ref={paraScope}
 
-                    >Welcome! I'm Dhruv Shah, a dedicated student of computer science with a strong passion for web development. Currently advancing my studies in computer science, I'm also actively self-teaching web development to complement  my academic knowledge.
+                    >Welcome! I'm Dhruv Shah, a dedicated student of Information Systems with a strong passion for Full Stack Development. Currently advancing my studies in Information Systems, I'm also actively self-teaching Full Stack Development to complement  my academic knowledge.
                         <br />
                         <br />
 
-                        I am on the lookout for exciting job opportunities where I can apply my skills and contribute meaningfully to innovative projects. With a solid foundation in computer science and a growing expertise in web development, I am eager to embark on a professional journey where I can continue to learn, grow, and make a positive impact.
+                        I am on the lookout for exciting job opportunities where I can apply my skills and contribute meaningfully to innovative projects. With a solid foundation in Information Systems and a growing expertise in Full Stack Development, I am eager to embark on a professional journey where I can continue to learn, grow, and make a positive impact.
                         <br />
                         <br />
 
@@ -185,11 +185,11 @@ const About = () => {
                             <div className="AboutMe">
                                 <h1>Get to Know me!</h1>
                                 <hr></hr>
-                                <p>Welcome! I'm Dhruv Shah, a dedicated student of computer science with a strong passion for web development. Currently advancing my studies in computer science, I'm also actively self-teaching web development to complement  my academic knowledge.
+                                <p>Welcome! I'm Dhruv Shah, a dedicated student of Information Systems with a strong passion for Full Stack Development. Currently advancing my studies in Information Systems, I'm also actively self-teaching Full Stack Development to complement  my academic knowledge.
                                     <br />
                                     <br />
 
-                                    I am on the lookout for exciting job opportunities where I can apply my skills and contribute meaningfully to innovative projects. With a solid foundation in computer science and a growing expertise in web development, I am eager to embark on a professional journey where I can continue to learn, grow, and make a positive impact.
+                                    I am on the lookout for exciting job opportunities where I can apply my skills and contribute meaningfully to innovative projects. With a solid foundation in Information Systems and a growing expertise in Full Stack Development, I am eager to embark on a professional journey where I can continue to learn, grow, and make a positive impact.
                                     <br />
                                     <br />
 

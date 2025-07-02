@@ -100,7 +100,7 @@ const Main = () => {
                 </header>
 
                 <motion.div initial={{x: '-100vw'}} animate={{x: 0}}  transition={{  ease: "circIn" }}className="mainContent">
-                    <h1 className='intro'>Hello, I'm <motion.span  initial={{opacity: 0, y: -250}} animate={{opacity: 1, y:0}}  transition={{  ease: "anticipate", delay: 1 }}>Dhruv Shah</motion.span>, a student <br></br> studying computer science and web development.
+                    <h1 className='intro'>Hello, I'm <motion.span  initial={{opacity: 0, y: -250}} animate={{opacity: 1, y:0}}  transition={{  ease: "anticipate", delay: 1 }}>Dhruv Shah</motion.span>, a student <br></br> studying Information Systems and Full Stack Development.
                     
                    
                     

@@ -12,17 +12,20 @@
     overflow-x: hidden;
   }
   
-  .landing-container {
+  /* .landing-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #000;
     color: white;
     position: relative;
-  }
+    
+  } */
+
   
   .background-image {
     position: absolute;
+    
     top: 0;
     left: 0;
     width: 100%;
@@ -139,7 +142,7 @@
   /* From Uiverse.io by boryanakrasteva */ 
 .btn {
     width: 30px;
-    height: 50px;
+    height: 40px;
     border-radius: 30px;
     display: flex;
     align-items: center;

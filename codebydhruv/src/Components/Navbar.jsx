@@ -1,70 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import MyLogo from "../assets/images/MyLogo.png";
 
 const Navbar = () => {
-  return (
-    <>
-      <style>{`
-        @media only screen and (min-width: 768px){
-          .parent:hover .child {
-              opacity:1;
-              height:auto;
-              overflow:visible;
-              transform: translateY(0);
-          }
-          .child {
-              opacity:0;
-              height:0;
-              overflow:hidden;
-              transform: translateY(-10%);
-          }
-        }
-      `}</style>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <nav className="flex px-4 border-b md:shadow-lg items-center relative bg-bg text-primary ">
-        <div className="text-lg font-bold md:py-0 py-4">Logo</div>
-        <ul className="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0 bg-bg">
-          <li>
-            <a href="#" className="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" className="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-              <span>Products</span>
-            </a>
-          </li>
-          <li className="relative parent">
-            <a href="#" className="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2">
-              <span>Service</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24">
-                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-              </svg>
-            </a>
-            <ul className="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-bg md:shadow-lg md:rounded-b">
-              <li>
-                <a href="#" className="flex px-4 py-3 hover:bg-gray-50">Web development</a>
-              </li>
-              <li>
-                <a href="#" className="flex px-4 py-3 hover:bg-gray-50">Web Design</a>
-              </li>
-              <li>
-                <a href="#" className="flex px-4 py-3 hover:bg-gray-50">Machine Learning</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" className="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-              <span>About us</span>
-            </a>
-          </li>
-        </ul>
-        <div className="ml-auto md:hidden text-gray-500 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+  return (
+    <nav className="flex items-center justify-between px-4 py-2  md:shadow-lg bg-black/30 text-primary relative z-50">
+      {/* Logo */}
+      <div className="flex items-center">
+        <img src={MyLogo} alt="Logo" className="h-20 w-auto" />
+      </div>
+
+      {/* Hamburger Toggle (Mobile) */}
+      <div className="md:hidden text-white cursor-pointer z-50" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </div>
-      </nav>
-    </>
+        ) : (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </div>
+
+      {/* Nav Links */}
+      <ul
+        className={`absolute md:relative top-full left-0 right-0 md:flex md:items-center md:space-x-6 bg-black/90 md:bg-transparent text-center transition-all duration-300 ease-in-out ${isOpen ? "block py-4" : "hidden"
+          }`}
+      >
+        <li>
+          <a href="#" className="block py-2 text-lg font-medium text-secondary hover:text-accent transition duration-300">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#" className="block py-2 text-lg font-medium text-secondary hover:text-accent transition duration-300">
+            About Me
+          </a>
+        </li>
+        <li>
+          <a href="#" className="block py-2 text-lg font-medium text-secondary hover:text-accent transition duration-300">
+            Projects
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

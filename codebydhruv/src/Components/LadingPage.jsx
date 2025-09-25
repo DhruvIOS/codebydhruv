@@ -2,22 +2,23 @@ import React from "react";
 import "../styles/LandingPage.css";
 import myPic from "../assets/images/myPic.JPG";
 import Navbar from "./Navbar";
-import bgDarkClouds from "../assets/images/bgDarkClouds.jpg"; 
+import bgDarkClouds from "../assets/images/bgDarkClouds.jpg";
 import AboutMeSection from "./AboutMe";  // import AboutMe
 import Projects from "./Projects";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
-<Helmet>
-  <title>Dhruv Shah | Information Systems Student & Web Developer</title>
-  <meta 
-    name="description" 
-    content="Portfolio of Dhruv Shah, Information Systems student and full-stack web developer. Explore projects, skills, and achievements." 
-  />
-  <link rel="canonical" href="https://codebydhruv.vercel.app/" />
-</Helmet>
+
 
 const LandingPage = () => (
   <div className="landing-root">
+    <Helmet>
+      <title>Dhruv Shah | Information Systems Student & Web Developer</title>
+      <meta
+        name="description"
+        content="Portfolio of Dhruv Shah, Information Systems student and full-stack web developer. Explore projects, skills, and achievements."
+      />
+      <link rel="canonical" href="https://codebydhruv.vercel.app/" />
+    </Helmet>
     {/* Background */}
     <img src={bgDarkClouds} alt="Background" className="landing-bg" />
     <div className="landing-overlay"></div>

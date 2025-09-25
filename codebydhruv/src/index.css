@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @layer base {
   :root {
     --color-bg: #0A0A0A;
+    --color-bg2: #0b0a0a;
     --color-text-primary: #9A86FF;
     --color-text-secondary: #7B9DFF;
     --color-accent: #5C4DFF;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://codebydhruv.vercel.app/</loc>
+    <lastmod>2025-09-24</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Me Section -->
+  <url>
+    <loc>https://codebydhruv.vercel.app/#aboutme</loc>
+    <lastmod>2025-09-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://codebydhruv.vercel.app/#projects</loc>
+    <lastmod>2025-09-24</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://codebydhruv.vercel.app/#contact</loc>
+    <lastmod>2025-09-24</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

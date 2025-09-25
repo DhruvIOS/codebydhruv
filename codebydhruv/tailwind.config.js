@@ -5,8 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
       colors: {
         bg: '#0A0A0A',
+        bg2: '0b0a0a',
         primary: '#9A86FF',
         secondary: '#7B9DFF',
         accent: '#5C4DFF',
@@ -18,8 +22,10 @@ module.exports = {
       boxShadow: {
         'button': '0 4px 15px rgba(92, 77, 255, 0.5)',
         'button-hover': '0 6px 20px rgba(92, 77, 255, 0.7)',
-      }
+      },
+
     },
+
   },
   plugins: [],
 }

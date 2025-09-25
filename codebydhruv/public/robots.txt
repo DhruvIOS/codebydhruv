@@ -1,0 +1,12 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Disallow sensitive files
+Disallow: /manifest.json
+Disallow: /favicon.ico
+Disallow: /logo192.png
+Disallow: /logo512.png
+
+# Sitemap
+Sitemap: https://codebydhruv.vercel.app/sitemap.xml

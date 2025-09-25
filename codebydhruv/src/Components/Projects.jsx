@@ -34,7 +34,8 @@ const Projects = () => (
 
     <div>
         <Helmet>
-            <title>Projects | Dhruv Shah Portfolio</title>
+            <title>Dhruv Shah | Full Stack Developer & IS Student</title>
+
             <meta
                 name="description"
                 content="Explore projects by Dhruv Shah, including CliniScribe and EDU-HUB, showcasing expertise in full-stack web development, authentication, and scalable apps."

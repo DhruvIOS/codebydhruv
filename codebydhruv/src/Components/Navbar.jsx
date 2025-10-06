@@ -49,23 +49,28 @@ const Navbar = () => {
 
       {/* Nav Links */}
       <ul
-        className={`absolute md:relative top-full left-0 right-0 md:flex md:items-center md:space-x-8 bg-black/90 md:bg-transparent text-center transition-all duration-500 ease-in-out ${
-          isOpen
-            ? "max-h-96 opacity-100 py-6"
-            : "max-h-0 opacity-0 md:opacity-100 md:max-h-screen"
-        } overflow-hidden`}
+  className={`absolute md:relative top-full left-0 right-0 md:flex md:items-center md:space-x-8 bg-black/90 md:bg-transparent text-center transition-all duration-500 ease-in-out ${
+    isOpen
+      ? "max-h-96 opacity-100 py-6"
+      : "max-h-0 opacity-0 md:opacity-100 md:max-h-screen"
+  } overflow-hidden`}
+>
+  {[
+    { name: "HOME", link: "/" },
+    { name: "ABOUT ME", link: "#aboutme" },
+    { name: "PROJECTS", link: "#projects" },
+  ].map((item) => (
+    <li key={item.name}>
+      <a
+        href={item.link}
+        className="block py-3 px-4 text-lg font-outfit font-medium text-secondary hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#7b9dff] hover:to-[#764ba2] transition duration-300"
       >
-        {["HOME", "ABOUT ME", "PROJECT"].map((item) => (
-          <li key={item}>
-            <a
-              href="#"
-              className="block py-3 px-4 text-lg font-outfit font-medium text-secondary hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#7b9dff] hover:to-[#764ba2] transition duration-300"
-            >
-              {item}
-            </a>
-          </li>
-        ))}
-      </ul>
+        {item.name}
+      </a>
+    </li>
+  ))}
+</ul>
+
     </nav>
   );
 };

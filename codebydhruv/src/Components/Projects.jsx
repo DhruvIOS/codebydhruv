@@ -54,11 +54,12 @@ const projects = [
     tech: [
       "React.js",
       "Tailwind CSS",
-      "Flask",
-      "Google Cloud Vision API",
-      "MongoDB",
+      "TensorFlow",
+      "COCO-SSD Model",
+      "Firebase",
       "Machine Learning",
       "RESTful APIs",
+      "Express.js"
     ],
     category: "Hackathon",
     winner: true,

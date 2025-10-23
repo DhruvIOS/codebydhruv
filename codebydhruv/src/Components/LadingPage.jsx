@@ -33,7 +33,7 @@ const LandingPage = () => (
           Hi, I’m <span className="highlight">Dhruv Shah</span>
         </h1>
         <p className="landing-subtitle">
-          Computer Science Student • Web Developer
+          Information Systems Student • Web Developer
         </p>
         <p className="landing-desc">
           I’m passionate about building sleek, high-performance websites and

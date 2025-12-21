@@ -4,6 +4,21 @@ import { Helmet } from "react-helmet";
 
 const projects = [
   {
+    title: "Crypt",
+    description:
+      "A VS Code extension that allows developers to 'bury' unused code snippets into a dedicated graveyard file instead of deleting them. Features include a custom Tree View sidebar, JSON-based persistence, and one-click code resurrection.",
+    github: "https://github.com/DhruvIOS/Crypt",
+    live: "https://getcrypt.vercel.app/",
+    thumbnail: "/assets/images/crypt.png", 
+    tech: [
+      "TypeScript",
+      "VS Code API",
+      "Next.js 15",
+      "Tailwind CSS"
+    ],
+    category: "Personal",
+  },
+  {
     title: "CliniScribe",
     description:
       "CliniScribe is a healthcare-focused web application designed to streamline clinical documentation for medical professionals. It simplifies the process of recording, organizing, and retrieving patient notes while maintaining a secure and user-friendly interface. The platform emphasizes efficiency, accuracy, and accessibility to improve the workflow of healthcare providers.",
@@ -107,6 +122,10 @@ const Projects = () => (
           </div>
         ))}
       </div>
+
+      <footer>
+        Copyrighted © Dhruv Shah 2025
+      </footer>
     </section>
   </div>
 );

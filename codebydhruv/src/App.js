@@ -11,8 +11,8 @@ function App() {
 
       {/* <Navbar /> */}
       <LandingPage />
-
       <AboutMe />
+
 
       <Projects />
 

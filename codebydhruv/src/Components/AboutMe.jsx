@@ -1,73 +1,159 @@
-import React from 'react';
-import { FaLaptopCode, FaReact, FaNodeJs, FaPython, FaGithub, FaLinkedin } from 'react-icons/fa';
-import '../styles/AboutMe.css';
+import React, { useRef, useState } from 'react';
+import { FaLinkedin, FaGithub, FaShieldAlt } from 'react-icons/fa';
+import { SiJavascript, SiReact, SiNodedotjs, SiPython, SiMongodb } from "react-icons/si";
 import { Helmet } from "react-helmet";
 
+const TiltCard = ({ children, className = "" }) => {
+  const cardRef = useRef(null);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
 
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
 
+    const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg tilt
+    const rotateY = ((x - centerX) / centerX) * 5;
 
-const techStack = [
-  { name: "JavaScript", icon: <FaLaptopCode /> },
-  { name: "React.js", icon: <FaReact /> },
-  { name: "Node.js", icon: <FaNodeJs /> },
-  { name: "Python", icon: <FaPython /> },
-  { name: "Express.js", icon: <FaLaptopCode /> },
-  { name: "MongoDB", icon: <FaGithub /> },
-];
+    setRotation({ x: rotateX, y: rotateY });
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+    setOpacity(0);
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`relative transition-transform duration-200 ease-out transform-gpu ${className}`}
+      style={{
+        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale3d(1, 1, 1)`,
+      }}
+    >
+      {/* Glass Content */}
+      <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl relative z-20 h-full overflow-hidden group">
+
+        {/* Dynamic Spotlight */}
+        <div
+          className="absolute inset-0 pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"
+          style={{
+            background: `radial-gradient(circle at ${50 + rotation.y * 5}% ${50 - rotation.x * 5}%, rgba(255,255,255,0.15), transparent 60%)`
+          }}
+        />
+
+        {children}
+      </div>
+
+      {/* Shadow/Glow Layer */}
+      <div
+        className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur-2xl opacity-20 -z-10 transition-opacity duration-300 group-hover:opacity-40"
+      />
+    </div>
+  );
+};
 
 const AboutMeSection = () => (
-
-  <div>
-
+  <section className="min-h-screen w-full bg-[#050505] overflow-hidden relative flex items-center justify-center py-20 px-4" id="aboutme">
     <Helmet>
-      <title>About Me | Dhruv Shah</title>
-      <meta
-        name="description"
-        content="Learn more about Dhruv Shah, Information Systems student, backend developer, and security intern with experience in React, Node.js, and MongoDB."
-      />
-      <link rel="canonical" href="https://codebydhruv.vercel.app/#aboutme" />
+      <title>About | Dhruv Shah</title>
+      <meta name="description" content="Dhruv Shah - Information Systems Student & Security Intern." />
     </Helmet>
 
-    <section className="aboutme-fullscreen" id="aboutme">
-      <div className="aboutme-content">
-        <h2 className="aboutme-title">
-          <FaLaptopCode className="icon-title" />
-          About Me
-        </h2>
-        <div className="aboutme-codeblock">
-          <span className="aboutme-console">console.log(</span>
-          <span className="aboutme-string">"Hey, I'm Dhruv Shah 👋"</span>
-          <span className="aboutme-console">);</span>
-        </div>
-        <div className="aboutme-tags">
-          <span className="tag">IS Student @ UMBC</span>
-          <span className="tag">Security Intern</span>
-        </div>
-        <span className="aboutme-subtle">Turning caffeine into code since 2020 ☕️</span>
-        <p className="aboutme-bio">
-          I specialize in building <span className="aboutme-keyword">high-performance web apps</span> and <span className="aboutme-keyword">secure backends</span>.<br />
-          <span className="aboutme-keyword">Currently:</span> Security Intern @ Youphoria | Backend Developer | Prompt Engineer
-        </p>
-        <div className="aboutme-stack-title">Tech Stack:</div>
-        <div className="aboutme-stack">
-          {techStack.map((tech, i) => (
-            <span key={i} className="aboutme-tech">
-              {tech.icon} {tech.name}
-            </span>
-          ))}
-        </div>
-        <div className="aboutme-connect">
-          <span className="aboutme-keyword">Let’s connect:</span>
-          <a href="https://www.linkedin.com/in/dhruvshah23/" target="_blank" rel="noopener noreferrer" className="aboutme-link">
-            <FaLinkedin /> LinkedIn
-          </a>
-        </div>
+    {/* Animated Deep Space Background */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-purple-900/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
+      <div className="absolute bottom-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-blue-900/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow animation-delay-2000"></div>
+      <div className="absolute top-[40%] left-[40%] w-[40vw] h-[40vw] bg-cyan-900/10 rounded-full blur-[100px] mix-blend-screen animate-pulse-slow animation-delay-4000"></div>
+    </div>
+
+    <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch transform lg:scale-95">
+
+      {/* Prism 1: The Narrative (Bio) */}
+      <div className="lg:col-span-8 flex flex-col">
+        <TiltCard className="h-full">
+          <div className="relative z-20 flex flex-col justify-between h-full space-y-8">
+            <div>
+              <h2 className="text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 tracking-tighter mb-6">
+                Architecting <br className="hidden lg:block" /> the future.
+              </h2>
+              <p className="text-xl text-gray-300 font-light leading-relaxed max-w-2xl">
+                I'm <span className="text-cyan-400 font-medium">Dhruv Shah</span>, constructing the digital backbone of secure applications.
+                As an IS student at UMBC, I blend disciplined backend logic with fluid frontend experiences.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <a href="https://www.linkedin.com/in/dhruvshah23/" target="_blank" rel="noopener noreferrer"
+                className="px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-cyan-50 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Let's Connect
+              </a>
+              <a href="https://github.com/codebydhruv" target="_blank" rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 hover:text-cyan-300 transition-all">
+                <FaGithub className="text-2xl" />
+              </a>
+            </div>
+          </div>
+        </TiltCard>
       </div>
-      <div className="code-bar">
-        <span>&lt;Code. Security. Creativity. Coffee. Repeat/&gt;</span>
+
+      {/* Prism 2: The Engine (Stack) */}
+      <div className="lg:col-span-4 flex flex-col gap-8">
+        <TiltCard className="flex-1">
+          <div className="h-full flex flex-col">
+            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">/ The Engine</h3>
+            <div className="grid grid-cols-2 gap-4 flex-1 content-center">
+              {[
+                { icon: <SiJavascript />, name: "JS", color: "text-yellow-400" },
+                { icon: <SiReact />, name: "React", color: "text-cyan-400" },
+                { icon: <SiNodedotjs />, name: "Node", color: "text-green-500" },
+                { icon: <SiPython />, name: "Python", color: "text-blue-500" },
+                { icon: <SiMongodb />, name: "Mongo", color: "text-green-400" },
+                { icon: <FaShieldAlt />, name: "Security", color: "text-purple-400" },
+              ].map((tech, i) => (
+                <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                  <span className={`text-2xl ${tech.color}`}>{tech.icon}</span>
+                  <span className="text-gray-300 font-medium text-sm">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </TiltCard>
+
+        {/* Prism 3: The Mission (Role) */}
+        <TiltCard>
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xs font-bold text-green-400 uppercase tracking-widest mb-1">Current Mission</h3>
+              <div className="text-2xl font-bold text-white">Security Intern</div>
+              <div className="text-gray-400 text-sm">@ Youphoria</div>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center animate-pulse">
+              <FaShieldAlt className="text-green-400 text-xl" />
+            </div>
+          </div>
+        </TiltCard>
       </div>
-    </section>
-  </div>
+
+    </div>
+
+    <style>{`
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+      `}</style>
+  </section>
 );
 
 export default AboutMeSection;

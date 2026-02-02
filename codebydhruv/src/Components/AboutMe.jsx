@@ -19,12 +19,10 @@ const TiltCard = ({ children, className = "" }) => {
     const rotateY = ((x - centerX) / centerX) * 5;
 
     setRotation({ x: rotateX, y: rotateY });
-    setOpacity(1);
   };
 
   const handleMouseLeave = () => {
     setRotation({ x: 0, y: 0 });
-    setOpacity(0);
   };
 
   return (

@@ -1,12 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { FaLinkedin, FaGithub, FaShieldAlt } from 'react-icons/fa';
+import { FaGithub, FaShieldAlt } from 'react-icons/fa';
 import { SiJavascript, SiReact, SiNodedotjs, SiPython, SiMongodb } from "react-icons/si";
 import { Helmet } from "react-helmet";
 
 const TiltCard = ({ children, className = "" }) => {
   const cardRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;

@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Components/Navbar';
 import LandingPage from './Components/LadingPage';
 import AboutMe from './Components/AboutMe';
 import Projects from './Components/Projects'

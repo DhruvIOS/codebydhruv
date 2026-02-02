@@ -3,8 +3,6 @@ import "../styles/LandingPage.css";
 import myPic from "../assets/images/myPic.JPG";
 import Navbar from "./Navbar";
 import bgDarkClouds from "../assets/images/bgDarkClouds.jpg";
-import AboutMeSection from "./AboutMe";  // import AboutMe
-import Projects from "./Projects";
 import { Helmet } from "react-helmet";
 
 

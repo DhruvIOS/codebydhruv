@@ -50,12 +50,12 @@ const Navbar = () => {
     <>
       <style>{`
         @keyframes section-landed {
-            0% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.02); filter: brightness(1.3); }
-            100% { transform: scale(1); filter: brightness(1); }
+            0% { box-shadow: inset 0 0 0px rgba(255,255,255,0); }
+            50% { box-shadow: inset 0 0 50px rgba(255,255,255,0.15); }
+            100% { box-shadow: inset 0 0 0px rgba(255,255,255,0); }
         }
         .animate-section-landed {
-            animation: section-landed 0.6s ease-out forwards;
+            animation: section-landed 1.5s ease-out;
         }
       `}</style>
 
@@ -72,8 +72,8 @@ const Navbar = () => {
                   href={item.link}
                   onClick={(e) => handleLinkClick(e, item.id)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 group ${activeSection === item.id
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
                     }`}
                 >
                   {/* Active State Highlight Pill (Subtle White Glow) */}

@@ -76,7 +76,7 @@ const AboutMeSection = () => (
       {/* Prism 1: The Narrative (Bio) */}
       <div className="lg:col-span-8 flex flex-col">
         <TiltCard className="h-full">
-          <div className="relative z-20 flex flex-col justify-between h-full space-y-8">
+          <div className="relative z-20 flex flex-col justify-center h-full space-y-8">
             <div>
               <h2 className="text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 tracking-tighter mb-6">
                 Architecting <br className="hidden lg:block" /> the future.
@@ -126,14 +126,32 @@ const AboutMeSection = () => (
 
         {/* Prism 3: The Mission (Role) */}
         <TiltCard>
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-xs font-bold text-green-400 uppercase tracking-widest mb-1">Current Mission</h3>
-              <div className="text-2xl font-bold text-white">Security Intern</div>
-              <div className="text-gray-400 text-sm">@ Youphoria</div>
+          <div className="flex flex-col gap-4">
+            {/* Role 1 */}
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-xs font-bold text-green-400 uppercase tracking-widest mb-1">Current Mission</h3>
+                <div className="text-xl font-bold text-white">SWE Intern</div>
+                <div className="text-gray-400 text-sm">@ Youphoria</div>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center animate-pulse">
+                <FaShieldAlt className="text-green-400 text-sm" />
+              </div>
             </div>
-            <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center animate-pulse">
-              <FaShieldAlt className="text-green-400 text-xl" />
+
+            {/* Divider */}
+            <div className="h-[1px] w-full bg-white/10"></div>
+
+            {/* Role 2 */}
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-1">Fellowship</h3>
+                <div className="text-xl font-bold text-white">Dyme Fellow</div>
+                <div className="text-gray-400 text-sm">@ Dyme</div>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <FaShieldAlt className="text-purple-400 text-sm" />
+              </div>
             </div>
           </div>
         </TiltCard>

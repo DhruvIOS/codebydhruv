@@ -9,4 +9,4 @@ Disallow: /logo192.png
 Disallow: /logo512.png
 
 # Sitemap
-Sitemap: https://codebydhruv.vercel.app/sitemap.xml
+Sitemap: https://www.codebydhruv.dev/sitemap.xml

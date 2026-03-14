@@ -15,7 +15,7 @@ const LandingPage = () => (
         name="description"
         content="Portfolio of Dhruv Shah, Information Systems student and full-stack web developer. Explore projects, skills, and achievements."
       />
-      <link rel="canonical" href="https://codebydhruv.vercel.app/" />
+      <link rel="canonical" href="https://www.codebydhruv.dev/" />
     </Helmet>
     {/* Background */}
     <img src={bgDarkClouds} alt="Background" className="landing-bg" />

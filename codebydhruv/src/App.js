@@ -1,22 +1,24 @@
-import './App.css';
-import LandingPage from './Components/LadingPage';
-import AboutMe from './Components/AboutMe';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Projects from './Components/Projects'
+import Footer from './Components/Footer';
+import Portfolio from './pages/Portfolio';
+import Freelance from './pages/Freelance';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-
-      <Navbar />
-      <LandingPage />
-      <AboutMe />
-
-
-      <Projects />
-
-    </div>
-
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Portfolio />} />
+            <Route path="/hire" element={<Freelance />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

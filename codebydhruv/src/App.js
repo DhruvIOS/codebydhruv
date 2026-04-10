@@ -1,27 +1,33 @@
-import './App.css';
-import LandingPage from './Components/LadingPage';
-import AboutMe from './Components/AboutMe';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './Components/Navbar';
-import Projects from './Components/Projects';
+import Footer from './Components/Footer';
+import Portfolio from './pages/Portfolio';
+import Freelance from './pages/Freelance';
+import './index.css';
 import { Helmet } from 'react-helmet-async';
 
 function App() {
   const canonicalUrl = `https://www.codebydhruv.dev${window.location.pathname}`;
 
   return (
-    <div className="App">
-      <Helmet>
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
-      <Navbar />
-      <LandingPage />
-      <AboutMe />
-
-
-      <Projects />
-
-    </div>
-
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <Helmet>
+            <link rel="canonical" href={canonicalUrl} />
+          </Helmet>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Portfolio />} />
+              <Route path="/hire" element={<Freelance />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

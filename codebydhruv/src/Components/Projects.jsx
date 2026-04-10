@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Evidex",
     description: "An AI-powered Digital Forensics platform that turns raw evidence into actionable intelligence. It features a secure 'Evidence Vault' for high-res logs and media, enterprise-scale semantic search across millions of records, and immutable blockchain anchoring for legal Chain of Custody.",
-    github: "https://github.com/DhruvIOS/evidex",
+    github: `${process.env.REACT_APP_GITHUB_URL}/evidex`,
     live: "https://evidex.tech/",
     thumbnail: "/assets/images/evidex.png",
     tech: ["Next.js", "Node.js", "Vultr", "Snowflake", "MongoDB", "Gemini AI", "Solana"],
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Crypt",
     description: "A VS Code extension to 'bury' unused code snippets. Features custom Tree View & JSON persistence.",
-    github: "https://github.com/DhruvIOS/Crypt",
+    github: `${process.env.REACT_APP_GITHUB_URL}/Crypt`,
     live: "https://getcrypt.vercel.app/",
     thumbnail: "/assets/images/crypt.png",
     tech: ["TypeScript", "VS Code API", "Next.js", "Tailwind"],
@@ -32,7 +32,7 @@ const projects = [
   {
     title: "CliniScribe",
     description: "Healthcare app for streamlining clinical documentation. Secure, organized, and user-friendly.",
-    github: "https://github.com/DhruvIOS/cliniscribe",
+    github: `${process.env.REACT_APP_GITHUB_URL}/cliniscribe`,
     live: "https://cliniscribe.vercel.app/",
     thumbnail: "/assets/images/cliniscribe.png",
     tech: ["React", "Node.js", "MongoDB", "Firebase"],
@@ -45,7 +45,7 @@ const projects = [
   {
     title: "EDU-HUB",
     description: "Academic platform connecting students with resources and discussions in a scalable hub.",
-    github: "https://github.com/DhruvIOS/edu-hub",
+    github: `${process.env.REACT_APP_GITHUB_URL}/edu-hub`,
     live: "",
     thumbnail: "/assets/images/edu_hub.png",
     tech: ["React", "Express", "MongoDB", "JWT"],
@@ -58,7 +58,7 @@ const projects = [
   {
     title: "GreenCrew",
     description: "AI sustainability platform gamifying eco-actions. Winner at HackUMBC 2025.",
-    github: "https://github.com/DhruvIOS/greencrew",
+    github: `${process.env.REACT_APP_GITHUB_URL}/greencrew`,
     live: "https://greencrew.tech/",
     thumbnail: "/assets/images/greencrew.png",
     tech: ["React", "TensorFlow", "Firebase", "Express"],

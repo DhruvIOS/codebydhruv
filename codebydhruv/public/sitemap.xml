@@ -3,30 +3,16 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.codebydhruv.dev/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <loc>https://codebydhruv.dev/</loc>
+    <lastmod>2026-04-02</lastmod>
     <priority>1.0</priority>
   </url>
 
-  <!-- About Me Section -->
+  <!-- Services / Hire Page -->
   <url>
-    <loc>https://www.codebydhruv.dev/#aboutme</loc>
-    <lastmod>2025-09-24</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Projects Section -->
-  <url>
-    <loc>https://www.codebydhruv.dev/#projects</loc>
-    <lastmod>2025-09-24</lastmod>
+    <loc>https://codebydhruv.dev/hire</loc>
+    <lastmod>2026-04-02</lastmod>
     <priority>0.9</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://www.codebydhruv.dev/#contact</loc>
-    <lastmod>2025-09-24</lastmod>
-    <priority>0.7</priority>
   </url>
 
 </urlset>

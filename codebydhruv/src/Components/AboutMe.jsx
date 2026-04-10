@@ -88,11 +88,11 @@ const AboutMeSection = () => (
             </div>
 
             <div className="flex items-center gap-6">
-              <a href="https://www.linkedin.com/in/dhruvshah23/" target="_blank" rel="noopener noreferrer"
+              <a href={process.env.REACT_APP_LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
                 className="px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-cyan-50 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                 Let's Connect
               </a>
-              <a href="https://github.com/codebydhruv" target="_blank" rel="noopener noreferrer"
+              <a href={process.env.REACT_APP_GITHUB_ORG_URL} target="_blank" rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/10 text-white hover:bg-white/20 hover:text-cyan-300 transition-all">
                 <FaGithub className="text-2xl" />
               </a>

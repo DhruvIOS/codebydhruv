@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useFadeUp } from '../hooks/useFadeUp';
 import logoWhite from '../assets/images/MyLogo(white).png';
 import './Portfolio.css';
@@ -11,17 +12,17 @@ function Hero() {
       <div className="noise-overlay"></div>
       <div className="hero-container">
         <div className="hero-left">
-          <div className="overline">FULL STACK DEVELOPER & AGENCY FOUNDER</div>
-          <h1 className="hero-title">I Build Things That Actually Work.</h1>
-          <p className="hero-subtitle">MERN stack, AI integrations, security-hardened builds — from idea to deployed product. Based in Maryland, working globally.</p>
+          <div className="overline">FREELANCE DEVELOPER & AI SPECIALIST — MARYLAND</div>
+          <h1 className="hero-title">I build things that actually work.</h1>
+          <p className="hero-subtitle">Freelance Full-Stack Developer and AI Specialist taking businesses from idea to deployed product. I build custom web applications, AI integrations, and seamless workflow automations for clients across Maryland and beyond.</p>
           <div className="hero-ctas">
-            <a href="#projects" className="btn-primary">View My Work</a>
-            <a href="https://github.com/DhruvIOS" target="_blank" rel="noreferrer" className="text-link">GitHub ↗</a>
+            <Link to="/hire" className="btn-primary">See My AI Automation Services</Link>
+            <a href="#projects" className="text-link">View My Work ↓</a>
           </div>
         </div>
         <div className="hero-right">
           <div className="hero-brand-presentational">
-            <img src={logoWhite} alt="Dhruv Shah" className="hero-main-logo" />
+            <img src={logoWhite} alt="Dhruv Shah - Freelance AI Developer Maryland" className="hero-main-logo" />
           </div>
         </div>
       </div>
@@ -44,9 +45,10 @@ const projectsData = [
   {
     title: "Evidex",
     description: "An AI-powered Digital Forensics platform that turns raw evidence into actionable intelligence. It features a secure 'Evidence Vault' for high-res logs and media, enterprise-scale semantic search across millions of records, and immutable blockchain anchoring for legal Chain of Custody.",
-    github: "https://github.com/DhruvIOS/evidex",
+    github: `${process.env.REACT_APP_GITHUB_URL}/evidex`,
     live: "https://evidex.tech/",
     thumbnail: "/assets/images/evidex.png",
+    alt: "Evidex - AI-powered digital forensics platform built with Next.js and Node.js",
     tech: ["Next.js", "Node.js", "Vultr", "Snowflake", "MongoDB", "Gemini AI", "Solana"],
     category: "Hackathon",
     accentRgb: "59, 130, 246",
@@ -55,9 +57,10 @@ const projectsData = [
   {
     title: "Crypt",
     description: "A VS Code extension to 'bury' unused code snippets. Features custom Tree View & JSON persistence.",
-    github: "https://github.com/DhruvIOS/Crypt",
+    github: `${process.env.REACT_APP_GITHUB_URL}/Crypt`,
     live: "https://getcrypt.vercel.app/",
     thumbnail: "/assets/images/crypt.png",
+    alt: "Crypt - VS Code extension for managing and archiving unused code snippets",
     tech: ["TypeScript", "VS Code API", "Next.js", "Tailwind"],
     category: "Personal",
     accentRgb: "168, 85, 247",
@@ -66,9 +69,10 @@ const projectsData = [
   {
     title: "CliniScribe",
     description: "Healthcare app for streamlining clinical documentation. Secure, organized, and user-friendly.",
-    github: "https://github.com/DhruvIOS/cliniscribe",
+    github: `${process.env.REACT_APP_GITHUB_URL}/cliniscribe`,
     live: "https://cliniscribe.vercel.app/",
     thumbnail: "/assets/images/cliniscribe.png",
+    alt: "CliniScribe - Healthcare documentation app built with React and Firebase for clinical professionals",
     tech: ["React", "Node.js", "MongoDB", "Firebase"],
     category: "Hackathon",
     accentRgb: "59, 130, 246",
@@ -77,9 +81,10 @@ const projectsData = [
   {
     title: "EDU-HUB",
     description: "Academic platform connecting students with resources and discussions in a scalable hub.",
-    github: "https://github.com/DhruvIOS/edu-hub",
+    github: `${process.env.REACT_APP_GITHUB_URL}/edu-hub`,
     live: "",
     thumbnail: "/assets/images/edu_hub.png",
+    alt: "EDU-HUB - Academic collaboration platform built with the MERN stack",
     tech: ["React", "Express", "MongoDB", "JWT"],
     category: "Hackathon",
     accentRgb: "249, 115, 22",
@@ -88,9 +93,10 @@ const projectsData = [
   {
     title: "GreenCrew",
     description: "AI sustainability platform gamifying eco-actions. Winner at HackUMBC 2025.",
-    github: "https://github.com/DhruvIOS/greencrew",
+    github: `${process.env.REACT_APP_GITHUB_URL}/greencrew`,
     live: "https://greencrew.tech/",
     thumbnail: "/assets/images/greencrew.png",
+    alt: "GreenCrew - AI sustainability platform and HackUMBC 2025 domain winner",
     tech: ["React", "TensorFlow", "Firebase", "Express"],
     category: "Hackathon",
     winner: true,
@@ -109,7 +115,7 @@ function Projects() {
     <section id="projects" className="projects-section theme-light" ref={fadeRef}>
       <div className="projects-container">
         <div className="overline dark">/ SELECTED WORK</div>
-        <h2 className="section-title dark">Things I've Built.</h2>
+        <h2 className="section-title dark">Full-Stack Web Apps with AI Integration</h2>
         
         <div className="filter-tabs">
           {['All', 'Hackathon', 'Personal'].map(tab => (
@@ -132,7 +138,7 @@ function Projects() {
             >
               {proj.thumbnail && (
                 <div className="project-thumbnail">
-                  <img src={proj.thumbnail} alt={proj.title} />
+                  <img src={proj.thumbnail} alt={proj.alt} loading="lazy" />
                 </div>
               )}
               <div className="project-content">
@@ -171,7 +177,7 @@ function About() {
           <div className="overline">/ ABOUT</div>
           <h2 className="section-title">Builder by nature. Developer by trade.</h2>
           <p className="about-body">
-            I'm a Full Stack Developer and Information Systems student at UMBC with a focus on web apps, ML integration, and API engineering. I'm currently an SWE Intern at Youphoria building iOS features, and I care deeply about crafting clean, secure, and highly functional user experiences.
+            I'm a Full Stack Developer and Information Systems student at UMBC with a focus on web apps, ML integration, and API engineering. I'm currently an SWE Intern at Youphoria building iOS features, and I care deeply about crafting clean, secure, and highly functional user experiences. I work with small businesses across Maryland — from Annapolis and Pasadena to Baltimore, Columbia, and beyond — building custom AI solutions and full-stack web applications that solve real problems.
           </p>
           
           <h3 className="subsection-title">Experience &amp; Education</h3>
@@ -215,6 +221,10 @@ function About() {
                <li><strong>Hackathons</strong> Hophacks &amp; Bitcamp Participant</li>
             </ul>
           </div>
+
+          <div className="info-card">
+            <Link to="/hire" className="text-link" style={{fontSize: '1rem'}}>View AI Services &amp; Pricing →</Link>
+          </div>
         </div>
       </div>
     </section>
@@ -254,6 +264,16 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio-page">
+      <Helmet>
+        <title>Dhruv Shah — AI Developer &amp; Automation Specialist | Maryland</title>
+        <meta name="description" content="Dhruv Shah is a freelance AI developer and automation specialist serving small businesses across Maryland and the DMV area." />
+        <link rel="canonical" href="https://codebydhruv.dev/" />
+        <meta property="og:title" content="Dhruv Shah — AI Developer & Automation Specialist" />
+        <meta property="og:description" content="Custom AI agents, full-stack web apps, and automation for small businesses across Maryland and the DMV area." />
+        <meta property="og:url" content="https://codebydhruv.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codebydhruv.dev/og-image.png" />
+      </Helmet>
       <Hero />
       <StatsBar />
       <About />

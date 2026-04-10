@@ -5,12 +5,18 @@ import Footer from './Components/Footer';
 import Portfolio from './pages/Portfolio';
 import Freelance from './pages/Freelance';
 import './index.css';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
+  const canonicalUrl = `https://www.codebydhruv.dev${window.location.pathname}`;
+
   return (
     <HelmetProvider>
       <Router>
         <div className="App">
+          <Helmet>
+            <link rel="canonical" href={canonicalUrl} />
+          </Helmet>
           <Navbar />
           <main>
             <Routes>

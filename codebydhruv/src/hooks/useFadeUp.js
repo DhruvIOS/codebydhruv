@@ -23,6 +23,7 @@ export function useFadeUp(options = { threshold: 0.1, rootMargin: '0px 0px -50px
         observer.unobserve(element);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options.threshold, options.rootMargin]);
 
   return elementRef;

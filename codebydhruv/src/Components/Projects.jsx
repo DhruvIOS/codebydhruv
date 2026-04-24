@@ -4,6 +4,19 @@ import { Helmet } from "react-helmet";
 
 const projects = [
   {
+    title: "Atlas",                                                                                                                   
+    description: "An AI-powered course registration autopilot for UMBC CS students. The Cartographer agent parses your degree audit PDF with Gemini multimodal to build a visual prerequisite graph with bottleneck highlighting. The Pilot agent automates the registration flow via Playwright - racing to secure seats the moment they drop — and stops just before Submit, keeping you in control.",                                                                                                                          
+    github: "https://github.com/bhattarya/atlas",
+    thumbnail: "/assets/images/atlas.png",
+    tech: ["React", "FastAPI", "Playwright", "Gemini AI", "Tailwind CSS", "Python"],                                                  
+    category: "Hackathon",
+    // Emerald Tint                                                                                                                   
+    tint: "from-emerald-500/10 via-emerald-500/5 to-transparent",
+    hoverTint: "group-hover:from-emerald-500/20 group-hover:via-emerald-500/10",                                                      
+    accent: "text-emerald-400"                                                                                                        
+},                                                                                                                                    
+       
+  {
     title: "Evidex",
     description: "An AI-powered Digital Forensics platform that turns raw evidence into actionable intelligence. It features a secure 'Evidence Vault' for high-res logs and media, enterprise-scale semantic search across millions of records, and immutable blockchain anchoring for legal Chain of Custody.",
     github: `${process.env.REACT_APP_GITHUB_URL}/evidex`,
@@ -11,6 +24,7 @@ const projects = [
     thumbnail: "/assets/images/evidex.png",
     tech: ["Next.js", "Node.js", "Vultr", "Snowflake", "MongoDB", "Gemini AI", "Solana"],
     category: "Hackathon",
+    winner: true,
     // Blue Tint
     tint: "from-blue-500/10 via-blue-500/5 to-transparent",
     hoverTint: "group-hover:from-blue-500/20 group-hover:via-blue-500/10",
@@ -111,7 +125,13 @@ const TiltCard = ({ children, className = "" }) => {
   );
 };
 
-const Projects = () => (
+const TABS = ["All", "Personal", "Hackathon"];
+
+const Projects = () => {
+  const [activeTab, setActiveTab] = useState("All");
+  const filtered = activeTab === "All" ? projects : projects.filter(p => p.category === activeTab);
+
+  return (
   <section className="min-h-screen w-full bg-[#050505] overflow-hidden relative py-20 px-4" id="projects">
     <Helmet>
       <title>Projects | Dhruv Shah</title>
@@ -125,15 +145,32 @@ const Projects = () => (
     </div>
 
     <div className="relative z-10 max-w-5xl mx-auto w-full">
-      <div className="mb-12 text-center animate-fade-in-up">
+      <div className="mb-10 text-center animate-fade-in-up">
         <h2 className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 tracking-tight mb-3">
           Selected Work
         </h2>
         <div className="h-1 w-20 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></div>
       </div>
 
+      {/* Tabs */}
+      <div className="flex justify-center gap-2 mb-10">
+        {TABS.map(tab => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
+              activeTab === tab
+                ? "bg-white text-black border-white"
+                : "bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-        {projects.map((proj, index) => (
+        {filtered.map((proj, index) => (
           <div key={index} className="h-full">
             <TiltCard>
               {/* Image Section */}
@@ -202,6 +239,7 @@ const Projects = () => (
         }
       `}</style>
   </section>
-);
+  );
+};
 
 export default Projects;

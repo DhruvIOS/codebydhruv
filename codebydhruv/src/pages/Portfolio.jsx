@@ -43,6 +43,19 @@ function StatsBar() {
 
 const projectsData = [
   {
+    title: "Atlas",
+    description: "An AI-powered course registration autopilot for UMBC CS students. The Cartographer agent parses your degree audit PDF with Gemini multimodal to build a visual prerequisite graph with bottleneck highlighting. The Pilot agent automates the registration flow via Playwright — racing to secure seats the moment they drop — and stops just before Submit, keeping you in control.",
+    github: "https://github.com/bhattarya/atlas",
+    live: "",
+    thumbnail: "/assets/images/atlas.png",
+    alt: "Atlas - AI-powered course registration autopilot for UMBC students using Gemini and Playwright",
+    tech: ["React", "FastAPI", "Playwright", "Gemini AI", "Tailwind CSS", "Python"],
+    category: "Hackathon",
+    winner: true,
+    accentRgb: "16, 185, 129",
+    accentHex: "#34d399"
+  },
+  {
     title: "Evidex",
     description: "An AI-powered Digital Forensics platform that turns raw evidence into actionable intelligence. It features a secure 'Evidence Vault' for high-res logs and media, enterprise-scale semantic search across millions of records, and immutable blockchain anchoring for legal Chain of Custody.",
     github: `${process.env.REACT_APP_GITHUB_URL}/evidex`,
